@@ -1,10 +1,13 @@
 import { Request, Response } from 'express';
 import productsService from '../services/products.service';
+import statusHTTP from './httpsStatus';
 
 const create = async (req: Request, res: Response): Promise<Response> => {
-  const { name, price, orderId } = req.body;
-  const product = await productsService.create({ name, price, orderId });
-  return res.status(201).json(product.data);
+  const { status, data } = await productsService.create(req.body);
+  if (status !== 'SUCCESSFUL') {
+    return res.status(statusHTTP(status)).json(data);
+  }
+  return res.status(201).json(data);
 };
 
 export default {
