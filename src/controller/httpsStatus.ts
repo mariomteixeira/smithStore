@@ -5,7 +5,7 @@ const statusHTTP = (status: string): number => {
     NOT_FOUND: 404,
     BAD_REQUEST: 422,
   };
-  return statusHTTPs[status] ?? 500;
+  return statusHTTPs[status];
 };
 
 export default statusHTTP;
