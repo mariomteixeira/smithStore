@@ -78,6 +78,12 @@ const create = async (product: ProductInputtableTypes): Promise<ServiceResponse<
   };
 };
 
+async function findAll(): Promise<Product[]> {
+  const listProducts = await ProductModel.findAll();
+  return listProducts.map((product) => product.toJSON());
+}
+
 export default {
   create,
+  findAll,
 };

@@ -23,6 +23,7 @@ const withoutStringPrice = { name: 'Martelo de Thor', price: 1, orderId: '5' }
 const nameLength = { name: 'Ma', price: '30 peças de ouro', orderId: '5' }
 const priceLength = { name: 'Martelo de Thor', price: '30', orderId: '5' }
 
+
 export default {
   validateProduct,
   valideResponse,
